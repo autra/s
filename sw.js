@@ -1,5 +1,5 @@
 function debug(msg) {
-  postMessage(JSON.stringify({type:'debug',msg:msg}));
+  postMessage(JSON.stringify({type:'debug',msg:msg}), '*');
 }
 
 debug('sw started');

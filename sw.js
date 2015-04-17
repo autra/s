@@ -2,6 +2,14 @@ function debug(msg) {
   postMessage(JSON.stringify({type:'debug',msg:msg}), '*');
 }
 
+this.onfetch = function(event) {
+  if (event.respondWith) {
+    event.respondWith(new Response("Hello world", {type : 'text/plain'}), {
+      headers: {"Content-Type": "text/plain"}
+    }));
+  }
+}
+
 debug('sw started');
 
 if (console) {

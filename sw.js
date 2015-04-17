@@ -6,7 +6,7 @@ this.onfetch = function(event) {
   if (event.respondWith) {
     event.respondWith(new Response("Hello world", {type : 'text/plain'}), {
       headers: {"Content-Type": "text/plain"}
-    }));
+    });
   }
 }
 

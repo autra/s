@@ -1,4 +1,3 @@
-console.log(this);
 this.addEventListener('install', function(event) {
     this.postMessage({type: 'debug', message: 'installed'});
 });

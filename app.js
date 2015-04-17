@@ -2,10 +2,10 @@
 // register service worker
 
 if ('serviceWorker' in navigator) {
-  var swPromise = navigator.serviceWorker.register('file:///home/augustin/workspace/service_workers/clock/sw.js');
+  var swPromise = navigator.serviceWorker.register('sw.js', {scope: './'});
   console.log(swPromise);
-  swPromise.then(reg => {
-    console.log('coucou');
+  swPromise.then((reg) => {
+    console.log(reg);
   }).catch(error => {
     console.error(error);
   });

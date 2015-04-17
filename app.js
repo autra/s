@@ -44,8 +44,9 @@ button.addEventListener('click', () => {
 });
 
 window.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'debug') {
-    console.log(event.data.message);
+  var result = JSON.parse(event.data);
+  if(result.type == 'debug') {
+    console.log(result.msg);
   }
 });
 

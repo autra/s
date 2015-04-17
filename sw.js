@@ -1,7 +1,7 @@
-this.addEventListener('install', function(event) {
-    this.postMessage({type: 'debug', message: 'installed'});
+self.addEventListener('install', function(event) {
+    self.console.log('installed');
 });
 
-this.addEventListener('fetch', function(event) {
-    this.postMessage({type: 'debug', message: 'got a fetch'});
+self.addEventListener('fetch', function(event) {
+    self.console.log('fetched');
 });

@@ -2,7 +2,7 @@ if (console) {
   console.log('console');
 }
 if (self && self.console) {
-  this.console.log('self.console');
+  self.console.log('self.console');
 }
 if (this && this.console) {
   this.console.log('this.console');

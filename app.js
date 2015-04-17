@@ -5,6 +5,7 @@ if ('serviceWorker' in navigator) {
   var swPromise = navigator.serviceWorker.register('sw.js', {scope: './'});
   console.log(swPromise);
   swPromise.then((reg) => {
+    reg.update();
     console.log(reg);
   }).catch(error => {
     console.error(error);

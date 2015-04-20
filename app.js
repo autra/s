@@ -2,7 +2,7 @@
 // register service worker
 
 if ('serviceWorker' in navigator) {
-  var swPromise = navigator.serviceWorker.register('sw.js', {scope: './'});
+  var swPromise = navigator.serviceWorker.register('sw1.js', {scope: './'});
   console.log(swPromise);
   swPromise.then((reg) => {
     console.log('service worker registered');

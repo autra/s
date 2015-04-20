@@ -11,7 +11,7 @@ this.onfetch = function(event) {
       console.log('intercepting foaas');
       var response = new Response('Service Workers rule!! - autra', {type : 'text/plain'}), {
         headers: {"Content-Type": "text/plain"};
-      }
+      });
       console.log(response);
       event.respondWith(response);
     }

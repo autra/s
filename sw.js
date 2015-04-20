@@ -1,8 +1,18 @@
 function debug(msg) {
+  if (console) {
+    console.log('console ' + msg);
+  }
+  if (self && self.console) {
+    self.console.log('self.console ' + msg);
+  }
+  if (this && this.console) {
+    this.console.log('this.console ' + msg);
+  }
   postMessage(JSON.stringify({type:'debug',msg:msg}), '*');
 }
 
 this.onfetch = function(event) {
+  debug('onfetch');
   if (event.respondWith) {
     if (event.request.url.startsWith('https://foaas.herokuapp.com/'))
     event.respondWith(new Response('Service Workers rule!! - autra', {type : 'text/plain'}), {
@@ -13,20 +23,8 @@ this.onfetch = function(event) {
 
 debug('sw started');
 
-if (console) {
-  console.log('console');
-}
-if (self && self.console) {
-  self.console.log('self.console');
-}
-if (this && this.console) {
-  this.console.log('this.console');
-}
 
 self.addEventListener('install', function(event) {
-    self.console.log('installed');
+    debug('installed');
 });
 
-self.addEventListener('fetch', function(event) {
-    self.console.log('fetched');
-});

@@ -8,7 +8,7 @@ function debug(msg) {
   if (this && this.console) {
     this.console.log('this.console ' + msg);
   }
-  postMessage(JSON.stringify({type:'debug',msg:msg}), '*');
+  this.postMessage(JSON.stringify({type:'debug',msg:msg}), '*');
 }
 
 this.onfetch = function(event) {

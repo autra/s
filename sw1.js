@@ -9,9 +9,11 @@ this.onfetch = function(event) {
   if (event.respondWith) {
     if (event.request.url.startsWith('https://foaas.herokuapp.com')) {
       console.log('intercepting foaas');
-      event.respondWith(new Response('Service Workers rule!! - autra', {type : 'text/plain'}), {
-        headers: {"Content-Type": "text/plain"}
-      });
+      var response = new Response('Service Workers rule!! - autra', {type : 'text/plain'}), {
+        headers: {"Content-Type": "text/plain"};
+      }
+      console.log(response);
+      event.respondWith(response);
     }
   }
 }

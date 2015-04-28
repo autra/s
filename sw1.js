@@ -8,7 +8,7 @@ this.onfetch = function(event) {
   debug('onfetch');
   debug(event.request.url);
   if (event.respondWith) {
-    if (event.request.url === 'http://gaiamobile.org/sw/foo.bar') {
+    if (event.request.url.contains('foo.bar')) {
     //if (event.request.url.startsWith('https://foaas.herokuapp.com')) {
       debug('intercepting foaas');
       var response = new Response('Service Workers rule!! - autra', {

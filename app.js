@@ -14,7 +14,8 @@ if ('serviceWorker' in navigator) {
 // function for loading each image via XHR
 
 function getFortune() {
-  return fetch('https://foaas.herokuapp.com/off/service%C2%A0workers/autra', {
+  return fetch('foo.bar', {
+  //return fetch('http://foaas.herokuapp.com/off/service%C2%A0workers/autra', {
     headers: {
       "Accept": "text/plain"
     }
@@ -43,10 +44,13 @@ button.addEventListener('click', () => {
 
 });
 
-window.addEventListener('message', (event) => {
+document.addEventListener('message', (event) => {
   var result = JSON.parse(event.data);
   if(result.type == 'debug') {
     console.log(result.msg);
   }
 });
 
+navigator.serviceWorker.onmessage = function(e) {
+    console.log(e.data);
+}
